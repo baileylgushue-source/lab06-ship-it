@@ -1,12 +1,13 @@
 {
   "scikit_learn": "1.9.1",
   "seed": 7,
-  "threshold": 0.6,
+  "threshold": 0.65,
   "numeric_features": [
     "distance_km",
     "items",
     "hour",
-    "courier_months"
+    "courier_months",
+    "prep_minutes"
   ],
   "categorical_features": [
     "weather",
@@ -20,17 +21,17 @@
   "test": {
     "confusion_matrix": [
       [
-        546,
-        87
+        570,
+        63
       ],
       [
-        59,
-        58
+        62,
+        55
       ]
     ],
-    "precision": 0.4,
-    "recall": 0.496,
-    "f1": 0.443,
-    "roc_auc": 0.755
+    "precision": 0.466,
+    "recall": 0.47,
+    "f1": 0.468,
+    "roc_auc": 0.766
   }
 }
