@@ -70,7 +70,7 @@ def validate_order(order: dict[str, Any]) -> list[str]:
 
     for field, allowed in CHOICES.items():
         value = order[field]
-        if value not in allowed:
+        if not isinstance(value, str) or value not in allowed:
             options = ", ".join(sorted(allowed))
             raise ValueError(f"{field}: choose one of {options}")
 
@@ -98,6 +98,7 @@ def predict_order(order: dict[str, Any]) -> dict[str, Any]:
 
     return {
         "probability": probability,
+        "probability_on_time": 1 - probability,
         "offer_voucher": offer_voucher,
         "threshold": THRESHOLD,
         "warnings": warnings,
